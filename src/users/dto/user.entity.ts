@@ -28,7 +28,7 @@ export class User {
     length : 255,
     nullable : false
   })
-  passwrod : string;
+  password : string;
 
 
   @Column({
