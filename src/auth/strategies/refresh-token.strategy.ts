@@ -13,8 +13,8 @@ export class RefreshTokenStrategy extends PassportStrategy (
     private configService : ConfigService,
   ) {
     super({
-      jwtFromRequest : ExtractJwt,
-      securetOrKey : configService.get('JWT_REEFRESH_SECRET'),
+      jwtFromRequest : ExtractJwt.fromAuthHeaderAsBearerToken(),
+      secretOrKey : configService.get('JWT_REFRESH_SECRET'),
       passReqToCallback : true
     });
   }
